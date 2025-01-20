@@ -1,0 +1,21 @@
+.table {
+  width: 35%;
+  border-collapse: collapse;
+  margin: 0 auto;
+
+  &__row {
+    height: 40px;
+  }
+
+  &__cell {
+    width: 40px;
+    height: 100%;
+    border: 1px solid #ccc;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  &__cell--filled {
+    background-color: black;
+  }
+}
