@@ -1,21 +1,23 @@
-import { matrixData } from "../data/matrixData.js";
+export function displayMatrix(matrixData) {
+  const tableContainer = document.querySelector("#table-container");
 
-export function displayMatrix() {
-  const main = document.querySelector("#main");
+  tableContainer.innerHTML = "";
 
   const table = document.createElement("table");
   table.classList.add("table");
 
-  matrixData.forEach((row, rowIndex) => {
+  matrixData.forEach((row) => {
     const tr = document.createElement("tr");
     tr.classList.add("table__row");
 
-    row.forEach((cell, cellIndex) => {
+    row.forEach((cell) => {
       const td = document.createElement("td");
       td.classList.add("table__cell");
 
       if (cell === 1) {
         td.classList.add("table__cell--filled");
+      } else {
+        td.classList.remove("table__cell--filled");
       }
 
       tr.appendChild(td);
@@ -24,5 +26,5 @@ export function displayMatrix() {
     table.appendChild(tr);
   });
 
-  main.appendChild(table);
+  tableContainer.appendChild(table);
 }
