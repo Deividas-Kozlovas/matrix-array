@@ -1,3 +1,5 @@
+import { changeIndividualMatrixCell } from "../helper/matrixChangeCell.js";
+
 export function displayMatrix(matrixData) {
   const tableContainer = document.querySelector("#table-container");
 
@@ -6,11 +8,11 @@ export function displayMatrix(matrixData) {
   const table = document.createElement("table");
   table.classList.add("table");
 
-  matrixData.forEach((row) => {
+  matrixData.forEach((row, rowIndex) => {
     const tr = document.createElement("tr");
     tr.classList.add("table__row");
 
-    row.forEach((cell) => {
+    row.forEach((cell, cellIndex) => {
       const td = document.createElement("td");
       td.classList.add("table__cell");
 
@@ -21,6 +23,11 @@ export function displayMatrix(matrixData) {
       }
 
       tr.appendChild(td);
+      td.addEventListener("click", () => {
+        displayMatrix(
+          changeIndividualMatrixCell(rowIndex, cellIndex, matrixData)
+        );
+      });
     });
 
     table.appendChild(tr);
