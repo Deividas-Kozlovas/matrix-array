@@ -13,13 +13,78 @@
   text-align: center;
   vertical-align: middle;
 }
-.table__cell--filled {
-  background-color: black;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-main {
-  width: 80%;
-  margin: 0 auto;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.button:hover {
+  background-color: #0056b3;
+}
+
+.button--reset {
+  background-color: #dc3545;
+}
+.button--reset:hover {
+  background-color: #c82333;
+}
+
+.table-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+.table__row {
+  display: flex;
+}
+
+.table__cell {
+  width: 30px;
+  height: 30px;
+  background-color: #ddd;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.table__cell--filled {
+  background-color: #007bff;
 }
 
 /*# sourceMappingURL=main.css.map */

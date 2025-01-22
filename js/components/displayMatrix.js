@@ -1,4 +1,5 @@
 import { changeIndividualMatrixCell } from "../helper/matrixChangeCell.js";
+import { emojisData } from "../data/emojisData.js";
 
 export function displayMatrix(matrixData) {
   const tableContainer = document.querySelector("#table-container");
@@ -17,9 +18,8 @@ export function displayMatrix(matrixData) {
       td.classList.add("table__cell");
 
       if (cell === 1) {
-        td.classList.add("table__cell--filled");
-      } else {
-        td.classList.remove("table__cell--filled");
+        td.innerHTML =
+          emojisData[Math.floor(Math.random() * emojisData.length)];
       }
 
       tr.appendChild(td);
