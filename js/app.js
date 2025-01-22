@@ -7,9 +7,14 @@ import { matrixRotate } from "./helper/matrixRotate.js";
   const inverBtn = document.querySelector("#invertBtn");
   const rotateLeft = document.querySelector("#rotateLeft");
   const rotateRight = document.querySelector("#rotateRight");
+  const reset = document.querySelector("#reset");
+
+  const initialMatrixData = JSON.parse(JSON.stringify(matrixData));
+
   displayMatrix(matrixData);
 
-  let modifiedMatrix = matrixData;
+  let modifiedMatrix = JSON.parse(JSON.stringify(matrixData));
+
   inverBtn.addEventListener("click", () => {
     modifiedMatrix = matrixInvert(modifiedMatrix);
     displayMatrix(modifiedMatrix);
@@ -22,6 +27,11 @@ import { matrixRotate } from "./helper/matrixRotate.js";
 
   rotateRight.addEventListener("click", () => {
     modifiedMatrix = matrixRotate(modifiedMatrix, "right");
+    displayMatrix(modifiedMatrix);
+  });
+
+  reset.addEventListener("click", () => {
+    modifiedMatrix = JSON.parse(JSON.stringify(initialMatrixData));
     displayMatrix(modifiedMatrix);
   });
 })();
